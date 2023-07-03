@@ -3,9 +3,23 @@
 public partial class MainPage : ContentPage
 {
 	int count = 0;
-    public string EntryText { get; set; }
 
-	public MainPage()
+    private string _entryText;
+
+    public string EntryText
+    {
+        get
+        {
+            return _entryText;
+        }
+        set
+        {
+			_entryText = value;
+			OnPropertyChanged();
+        }
+    }
+
+    public MainPage()
 	{
 		InitializeComponent();
 	}
